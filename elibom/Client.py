@@ -213,7 +213,7 @@ class ElibomClientException(Exception):
 		return repr(self.value)
 	
 def prettyPrint(jsonObj):
-	print json.dumps(jsonObj, sort_keys=True, indent=4, separators=(',', ': '))
+	print (json.dumps(jsonObj, sort_keys=True, indent=4, separators=(',', ': ')))
 		
 if __name__ == '__main__':
 	elibom = ElibomClient('XXX', 'XXX')
