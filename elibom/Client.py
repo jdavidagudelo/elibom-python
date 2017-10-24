@@ -44,7 +44,7 @@ class ElibomClient(object):
 		payload = json.dumps({'destination':destination, 'text':text}) 
 		response = requests.post(self.__api_base_url + 'messages', payload, auth=(self.user, self.password),headers=self.__headers)
 		if response.ok:
-			response_content = json.loads(response.content, encoding='utf-8')
+			response_content = json.loads(response.content.decode('utf-8'), encoding='utf-8')
 			return response_content['deliveryToken']
 		else:
 			self.__manage_error_response(response)
